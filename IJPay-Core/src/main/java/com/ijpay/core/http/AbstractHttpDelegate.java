@@ -418,9 +418,8 @@ public abstract class AbstractHttpDelegate {
 	 * @return {@link HttpResponse} 请求返回的结果
 	 */
 	private HttpResponse patchToResponse(String url, Map<String, String> headers, Map<String, Object> paramMap) {
+		System.out.println("patch to response "+url+headers+paramMap);
 		return HttpRequest.patch(url)
-			.setProxy(getProxy())
-			.addHeaders(headers)
 			.form(paramMap)
 			.execute();
 	}
